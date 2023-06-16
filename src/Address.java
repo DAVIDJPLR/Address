@@ -700,7 +700,7 @@ public class Address implements Comparable<Address>{
                     }
                 } else {
                     return (this.number.compareTo(o.number));
-                }s
+                }
             } else {
                 return (this.suffix.compareTo(o.suffix));
             }
