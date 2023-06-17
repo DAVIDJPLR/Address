@@ -293,6 +293,10 @@ public class Address implements Comparable<Address>{
         setExtra(extra);
     }
 
+    /**
+     * Constructor
+     * @param in An ArrayList that contains the variables of an Address as elements
+     */
     public Address(ArrayList<String> in){
         try{setStatus(in.get(0));} catch(Exception e){setStatus("");}
         try{setReason(in.get(1));} catch(Exception e){setReason("");}
@@ -359,154 +363,167 @@ public class Address implements Comparable<Address>{
         return status;
     }
     public void setStatus(String status) {
-        this.status = status.strip().toUpperCase();
+        this.status = status.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getReason() {
         return reason;
     }
     public void setReason(String reason) {
-        this.reason = reason.strip().toUpperCase();
+        this.reason = reason.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getNumber() {
         return number;
     }
     public void setNumber(String number) {
-        this.number = number.strip().toUpperCase();
+        this.number = number.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getPreDirection(){
         return preDirection;
     }
     public void setPreDirection(String preDirection){
-        this.preDirection = preDirection.strip().toUpperCase();
+        this.preDirection = preDirection.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getName(){
         return name;
     }
     public void setName(String name){
-        this.name = name.strip().toUpperCase();
+        this.name = name.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getSuffix(){
         return suffix;
     }
     public void setSuffix(String suffix){
-        this.suffix = suffix.strip().toUpperCase();
+        this.suffix = suffix.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getPostDirection(){
         return postDirection;
     }
     public void setPostDirection(String postDirection){
-        this.postDirection = postDirection.strip().toUpperCase();
+        this.postDirection = postDirection.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getUnitDesignator() {
         return unitDesignator;
     }
     public void setUnitDesignator(String unitDesignator) {
-        this.unitDesignator = unitDesignator.strip().toUpperCase();
+        this.unitDesignator = unitDesignator.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getUnit() {
         return unit;
     }
     public void setUnit(String unit) {
-        this.unit = unit.strip().toUpperCase();
+        this.unit = unit.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getCity() {
         return city;
     }
     public void setCity(String city) {
-        this.city = city.strip().toUpperCase();
+        this.city = city.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getState() {
         return state;
     }
     public void setState(String state) {
-        this.state = state.strip().toUpperCase();
+        this.state = state.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getZip() {
         return zip;
     }
     public void setZip(String zip) {
-        this.zip = zip.strip().toUpperCase();
+        this.zip = zip.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getPin() {
         return pin;
     }
     public void setPin(String pin) {
-        this.pin = pin.strip().toUpperCase();
+        this.pin = pin.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getPropertyType() {
         return propertyType;
     }
     public void setPropertyType(String propertyType) {
-        this.propertyType = propertyType.strip().toUpperCase();
+
+        if (propertyType.toUpperCase().contains("RESIDENTIAL")){
+            this.propertyType = "RESIDENTIAL";
+        } else if (propertyType.toUpperCase().contains("COMMERCIAL")){
+            this.propertyType = "COMMERCIAL";
+        } else if (propertyType.toUpperCase().contains("INDUSTRIAL")){
+            this.propertyType = "INDUSTRIAL";
+        } else if ((propertyType.toUpperCase().contains("REL"))||(propertyType.toUpperCase().contains("RELIGOUS"))||
+                    (propertyType.toUpperCase().contains("HEALTH"))||(propertyType.toUpperCase().contains("HOSPITAL"))||
+                    (propertyType.toUpperCase().contains("CLINIC"))||(propertyType.toUpperCase().contains("PUBLIC"))){
+            this.propertyType = "REL, HEALTH, PUB BUILDING";
+        } else {
+            this.propertyType = "OTHER";
+        }
     }
 
     public String getConfirmedCity() {
         return confirmedCity;
     }
     public void setConfirmedCity(String confirmedCity) {
-        this.confirmedCity = confirmedCity.strip().toUpperCase();
+        this.confirmedCity = confirmedCity.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getConfirmedCounty() {
         return confirmedCounty;
     }
     public void setConfirmedCounty(String confirmedCounty) {
-        this.confirmedCounty = confirmedCounty.strip().toUpperCase();
+        this.confirmedCounty = confirmedCounty.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getTaxCode() {
         return taxCode;
     }
     public void setTaxCode(String taxCode) {
-        this.taxCode = taxCode.strip().toUpperCase();
+        this.taxCode = taxCode.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getLandValue() {
         return landValue;
     }
     public void setLandValue(String landValue) {
-        this.landValue = landValue.strip().toUpperCase();
+        this.landValue = landValue.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getBuildingValue() {
         return buildingValue;
     }
     public void setBuildingValue(String buildingValue) {
-        this.buildingValue = buildingValue.strip().toUpperCase();
+        this.buildingValue = buildingValue.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getServiceDate() {
         return serviceDate;
     }
     public void setServiceDate(String serviceDate) {
-        this.serviceDate = serviceDate.strip().toUpperCase();
+        this.serviceDate = serviceDate.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getCorrectionDate() {
         return correctionDate;
     }
     public void setCorrectionDate(String correctionDate) {
-        this.correctionDate = correctionDate.strip().toUpperCase();
+        this.correctionDate = correctionDate.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public String getNotes() {
         return notes;
     }
     public void setNotes(String notes) {
-        this.notes = notes.strip().toUpperCase();
+        this.notes = notes.strip().toUpperCase().replace("$", "").replace(",", "");
     }
 
     public ArrayList<String> getExtra() {
@@ -738,5 +755,20 @@ public class Address implements Comparable<Address>{
     public int hashCode() {
         String id = number + name;
         return id.hashCode();
+    }
+
+    public boolean isException(){
+        try {
+            if (Integer.parseInt(buildingValue) == 0) {
+                return false;
+            }
+        } catch (Exception e){}
+        if (propertyType.toUpperCase().contains("EXEMPT")){
+            return false;
+        }
+        if (propertyType.toUpperCase().contains("VACANT")){
+            return false;
+        }
+        return true;
     }
 }
