@@ -293,6 +293,31 @@ public class Address implements Comparable<Address>{
         setExtra(extra);
     }
 
+    public Address(ArrayList<String> in){
+        try{setStatus(in.get(0));} catch(Exception e){setStatus("");}
+        try{setReason(in.get(1));} catch(Exception e){setReason("");}
+        try{setNumber(in.get(2));} catch(Exception e){setNumber("");}
+        try{setPreDirection(in.get(3));} catch(Exception e){setPreDirection("");}
+        try{setName(in.get(4));} catch(Exception e){setName("");}
+        try{setSuffix(in.get(5));} catch(Exception e){setSuffix("");}
+        try{setPostDirection(in.get(6));} catch(Exception e){setPostDirection("");}
+        try{setUnitDesignator(in.get(7));} catch(Exception e){setUnitDesignator("");}
+        try{setUnit(in.get(8));} catch(Exception e){setUnit("");}
+        try{setCity(in.get(9));} catch(Exception e){setCity("");}
+        try{setState(in.get(10));} catch(Exception e){setState("");}
+        try{setZip(in.get(11));} catch(Exception e){setZip("");}
+        try{setPin(in.get(12));} catch(Exception e){setPin("");}
+        try{setPropertyType(in.get(13));} catch(Exception e){setPropertyType("");}
+        try{setConfirmedCity(in.get(14));} catch(Exception e){setConfirmedCity("");}
+        try{setConfirmedCounty(in.get(15));} catch(Exception e){setConfirmedCounty("");}
+        try{setTaxCode(in.get(16));} catch(Exception e){setTaxCode("");}
+        try{setLandValue(in.get(17));} catch(Exception e){setLandValue("");}
+        try{setBuildingValue(in.get(18));} catch(Exception e){setBuildingValue("");}
+        try{setServiceDate(in.get(19));} catch(Exception e){setServiceDate("");}
+        try{setCorrectionDate(in.get(20));} catch(Exception e){setCorrectionDate("");}
+        try{setNotes(in.get(21));} catch(Exception e){setCorrectionDate("");}
+    }
+
     /**
      * Constructor
      * Deep Copy
