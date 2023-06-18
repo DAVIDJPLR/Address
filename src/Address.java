@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Address implements Comparable<Address>{
     /**
@@ -587,10 +588,14 @@ public class Address implements Comparable<Address>{
      * @return An array of strings each index holding the value of one field
      */
     public String[] toStringArray() {
-        String[] out = {status , reason , number, preDirection, name, suffix, postDirection,
+        String[] out = new String[]{status , reason , number, preDirection, name, suffix, postDirection,
                 unitDesignator, unit, city, state, zip, pin, propertyType, confirmedCity, confirmedCounty,
                 taxCode, landValue, buildingValue, serviceDate, correctionDate, notes};
         return out;
+    }
+
+    public ArrayList<String> toStringArrayList() {
+        return new ArrayList(Arrays.asList(toStringArray()));
     }
 
     /**
