@@ -456,18 +456,24 @@ public class Address implements Comparable<Address>{
     }
     public void setPropertyType(String propertyType) {
 
-        if (propertyType.toUpperCase().contains("RESIDENTIAL")){
-            this.propertyType = "RESIDENTIAL";
-        } else if (propertyType.toUpperCase().contains("COMMERCIAL")){
-            this.propertyType = "COMMERCIAL";
-        } else if (propertyType.toUpperCase().contains("INDUSTRIAL")){
-            this.propertyType = "INDUSTRIAL";
-        } else if ((propertyType.toUpperCase().contains("REL"))||(propertyType.toUpperCase().contains("RELIGOUS"))||
-                    (propertyType.toUpperCase().contains("HEALTH"))||(propertyType.toUpperCase().contains("HOSPITAL"))||
-                    (propertyType.toUpperCase().contains("CLINIC"))||(propertyType.toUpperCase().contains("PUBLIC"))){
-            this.propertyType = "REL, HEALTH, PUB BUILDING";
-        } else {
-            this.propertyType = "OTHER";
+        if (propertyType.toUpperCase().contains("EXEMPT")){
+            this.propertyType = "EXEMPT";
+        } else if (propertyType.toUpperCase().contains("VACANT")){
+            this.propertyType = "VACANT";
+        } else{
+            if (propertyType.toUpperCase().contains("RESIDENTIAL")){
+                this.propertyType = "RESIDENTIAL";
+            } else if (propertyType.toUpperCase().contains("COMMERCIAL")){
+                this.propertyType = "COMMERCIAL";
+            } else if (propertyType.toUpperCase().contains("INDUSTRIAL")){
+                this.propertyType = "INDUSTRIAL";
+            } else if ((propertyType.toUpperCase().contains("REL"))||(propertyType.toUpperCase().contains("RELIGIOUS"))||
+                        (propertyType.toUpperCase().contains("HEALTH"))||(propertyType.toUpperCase().contains("HOSPITAL"))||
+                        (propertyType.toUpperCase().contains("CLINIC"))||(propertyType.toUpperCase().contains("PUBLIC"))){
+                this.propertyType = "REL, HEALTH, PUB BUILDING";
+            } else {
+                this.propertyType = "OTHER";
+            }
         }
     }
 
