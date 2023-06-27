@@ -460,6 +460,8 @@ public class Address implements Comparable<Address>{
             this.propertyType = "EXEMPT";
         } else if (propertyType.toUpperCase().contains("VACANT")){
             this.propertyType = "VACANT";
+        } else if (propertyType.toUpperCase().contains("VAC")){
+            this.propertyType = "VACANT";
         } else{
             if ((propertyType.toUpperCase().contains("RESIDENTIAL"))&&(propertyType.toUpperCase().contains("HOME"))){
                 this.propertyType = "RESIDENTIAL";
