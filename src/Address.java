@@ -474,7 +474,7 @@ public class Address implements Comparable<Address>{
                         (propertyType.toUpperCase().contains("CLINIC"))||(propertyType.toUpperCase().contains("PUBLIC"))){
                 this.propertyType = "REL, HEALTH, PUB BUILDING";
             } else {
-                this.propertyType = "OTHER";
+                this.propertyType = propertyType;
             }
         }
     }
